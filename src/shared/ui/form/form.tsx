@@ -24,7 +24,10 @@ const FormLabel = forwardRef<
 >(({ className, ...props }, ref) => (
   <FormPrimitive.Label
     ref={ref}
-    className={cn('text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70', className)}
+    className={cn(
+      'text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
+      className
+    )}
     {...props}
   />
 ));
@@ -34,7 +37,10 @@ const FormControl = forwardRef<
   ComponentRef<typeof FormPrimitive.Control>,
   ComponentPropsWithoutRef<typeof FormPrimitive.Control>
 >(({ ...props }, ref) => (
-  <FormPrimitive.Control ref={ref} {...props} />
+  <FormPrimitive.Control
+    ref={ref}
+    {...props}
+  />
 ));
 FormControl.displayName = FormPrimitive.Control.displayName;
 
@@ -44,7 +50,7 @@ const FormMessage = forwardRef<
 >(({ className, children, ...props }, ref) => (
   <FormPrimitive.Message
     ref={ref}
-    className={cn('text-sm font-medium text-red-500', className)}
+    className={cn('text-sm font-medium text-error-500', className)}
     {...props}
   >
     {children}
@@ -55,15 +61,7 @@ FormMessage.displayName = FormPrimitive.Message.displayName;
 const FormValidityState = FormPrimitive.ValidityState;
 const FormSubmit = FormPrimitive.Submit;
 
-export {
-  Form,
-  FormField,
-  FormLabel,
-  FormControl,
-  FormMessage,
-  FormValidityState,
-  FormSubmit,
-};
+export { Form, FormField, FormLabel, FormControl, FormMessage, FormValidityState, FormSubmit };
 
 export type FormProps = ComponentPropsWithoutRef<typeof FormPrimitive.Root>;
 export type FormFieldProps = ComponentPropsWithoutRef<typeof FormPrimitive.Field>;

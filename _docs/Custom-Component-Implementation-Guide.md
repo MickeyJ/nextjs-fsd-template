@@ -15,18 +15,18 @@
 ```bash
 # shared/ui (custom components)
 src/shared/ui/button/button.tsx
-src/shared/ui/container/container.tsx
-src/shared/ui/section/section.tsx
-src/shared/ui/loading/loading.tsx
-src/shared/ui/skeleton/skeleton.tsx
-src/shared/ui/card/card.tsx
-src/shared/ui/input/input.tsx
-src/shared/ui/select/select.tsx
-src/shared/ui/search-select/search-select.tsx
-src/shared/ui/textarea/textarea.tsx
+src/shared/ui/container/container.tsx # actually do a good job!!!
+src/shared/ui/section/section.tsx # actually do a good job!!!
+src/shared/ui/loading/loading.tsx # actually do a good job!!!
+src/shared/ui/skeleton/skeleton.tsx # actually do a good job!!!
+src/shared/ui/card/card.tsx # actually do a good job!!!
+src/shared/ui/input/input.tsx # actually do a good job!!!
+src/shared/ui/select/select.tsx # actually do a good job!!!
+src/shared/ui/search-select/search-select.tsx # just clean it up a bit. DO NOT BREAK IT!!
+src/shared/ui/textarea/textarea.tsx # actually do a good job!!!
 src/shared/ui/calendar/calendar.tsx # react-day-picker
-src/shared/ui/time-picker-input/time-picker-input.tsx
-src/shared/ui/image-upload/image-upload.tsx
+src/shared/ui/time-picker-input/time-picker-input.tsx # just clean it up a bit. DO NOT BREAK IT!!
+src/shared/ui/image-upload/image-upload.tsx # just clean it up a bit. DO NOT BREAK IT!!
 src/shared/ui/password-input/password-input.tsx # use Input component with toggle password visibility
 ```
 
@@ -131,7 +131,7 @@ Shimmer effect with Motion:
 
 ```tsx
 <motion.div
-  className="bg-gradient-to-r from-transparent via-white/20 to-transparent"
+  className="bg-gradient-to-r from-transparent via-neutral-50/20 to-transparent"
   animate={{
     x: ['-100%', '100%'],
   }}

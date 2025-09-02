@@ -1,36 +1,33 @@
 'use client';
 
 import * as PopoverPrimitive from '@radix-ui/react-popover';
-import { AnimatePresence, motion } from 'motion/react';
 import { forwardRef, type ComponentPropsWithoutRef, type ComponentRef } from 'react';
 import { cn } from '@/shared/lib/utils';
 
 const Popover = PopoverPrimitive.Root;
 const PopoverTrigger = PopoverPrimitive.Trigger;
-const PopoverPortal = PopoverPrimitive.Portal;
 const PopoverAnchor = PopoverPrimitive.Anchor;
 
 const PopoverContent = forwardRef<
   ComponentRef<typeof PopoverPrimitive.Content>,
   ComponentPropsWithoutRef<typeof PopoverPrimitive.Content>
->(({ className, align = 'center', sideOffset = 4, children }, ref) => (
-  <PopoverPrimitive.Content asChild sideOffset={sideOffset} align={align} forceMount>
-    <motion.div
+>(({ className, align = 'center', sideOffset = 4, ...props }, ref) => (
+  <PopoverPrimitive.Portal>
+    <PopoverPrimitive.Content
       ref={ref}
-      initial={{ opacity: 0, scale: 0.95 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.95 }}
-      transition={{ duration: 0.2 }}
+      align={align}
+      sideOffset={sideOffset}
       className={cn(
-        'z-50 w-72 rounded-md border border-gray-200 bg-white p-4 text-gray-900 shadow-md outline-none',
+        'z-50 w-72 rounded-md border border-neutral-200 bg-neutral-50 p-4 text-neutral-950 shadow-md outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
         className
       )}
-    >
-      {children}
-    </motion.div>
-  </PopoverPrimitive.Content>
+      {...props}
+    />
+  </PopoverPrimitive.Portal>
 ));
 PopoverContent.displayName = PopoverPrimitive.Content.displayName;
+
+const PopoverPortal = PopoverPrimitive.Portal;
 
 export { Popover, PopoverTrigger, PopoverContent, PopoverPortal, PopoverAnchor };
 

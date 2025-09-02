@@ -23,4 +23,11 @@ export type {
   MenubarTriggerProps,
   MenubarContentProps,
   MenubarItemProps,
+  MenubarSeparatorProps,
+  MenubarLabelProps,
+  MenubarCheckboxItemProps,
+  MenubarRadioGroupProps,
+  MenubarRadioItemProps,
+  MenubarSubTriggerProps,
+  MenubarSubContentProps,
 } from './menubar';

@@ -13,8 +13,11 @@ const TooltipPortal = TooltipPrimitive.Portal;
 const TooltipContent = forwardRef<
   ComponentRef<typeof TooltipPrimitive.Content>,
   ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>
->(({ className, sideOffset = 4, ...props }, ref) => (
-  <TooltipPrimitive.Content asChild sideOffset={sideOffset}>
+>(({ className, sideOffset = 4, children }, ref) => (
+  <TooltipPrimitive.Content
+    asChild
+    sideOffset={sideOffset}
+  >
     <motion.div
       ref={ref}
       initial={{ opacity: 0, scale: 0.95 }}
@@ -22,22 +25,17 @@ const TooltipContent = forwardRef<
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.1 }}
       className={cn(
-        'z-50 overflow-hidden rounded-md border border-gray-200 bg-gray-900 px-3 py-1.5 text-sm text-gray-50 shadow-md',
+        'z-50 overflow-hidden rounded-md border border-neutral-200 bg-neutral-900 px-3 py-1.5 text-sm text-neutral-50 shadow-md',
         className
       )}
-      {...props}
-    />
+    >
+      {children}
+    </motion.div>
   </TooltipPrimitive.Content>
 ));
 TooltipContent.displayName = TooltipPrimitive.Content.displayName;
 
-export {
-  Tooltip,
-  TooltipTrigger,
-  TooltipContent,
-  TooltipProvider,
-  TooltipPortal,
-};
+export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider, TooltipPortal };
 
 export type TooltipProps = ComponentPropsWithoutRef<typeof TooltipPrimitive.Root>;
 export type TooltipTriggerProps = ComponentPropsWithoutRef<typeof TooltipPrimitive.Trigger>;

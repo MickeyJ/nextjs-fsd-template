@@ -13,11 +13,11 @@ const checkboxVariants = cva(
     variants: {
       variant: {
         default:
-          'border-gray-300 data-[state=checked]:bg-primary-500 data-[state=checked]:border-primary-500 focus-visible:ring-primary-500',
+          'border-neutral-300 data-[state=checked]:bg-primary-500 data-[state=checked]:border-primary-500 focus-visible:ring-primary-500',
         secondary:
-          'border-gray-300 data-[state=checked]:bg-secondary-500 data-[state=checked]:border-secondary-500 focus-visible:ring-secondary-500',
+          'border-neutral-300 data-[state=checked]:bg-secondary-500 data-[state=checked]:border-secondary-500 focus-visible:ring-secondary-500',
         destructive:
-          'border-gray-300 data-[state=checked]:bg-red-500 data-[state=checked]:border-red-500 focus-visible:ring-red-500',
+          'border-neutral-300 data-[state=checked]:bg-error-500 data-[state=checked]:border-error-500 focus-visible:ring-error-500',
       },
     },
     defaultVariants: {
@@ -36,7 +36,7 @@ export const Checkbox = forwardRef<ComponentRef<typeof CheckboxPrimitive.Root>, 
       className={cn(checkboxVariants({ variant }), className)}
       {...props}
     >
-      <CheckboxPrimitive.Indicator className="flex items-center justify-center text-white">
+      <CheckboxPrimitive.Indicator className="flex items-center justify-center text-neutral-50">
         <AnimatePresence>
           {props.checked !== false && (
             <motion.div

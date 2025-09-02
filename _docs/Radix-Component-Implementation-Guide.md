@@ -192,7 +192,7 @@ return (
             forceMount
           >
             <motion.div
-              className="fixed inset-0 bg-black/50"
+              className="fixed inset-0 bg-neutral-950/50"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -319,7 +319,7 @@ Radix provides the CSS variable `--radix-accordion-content-height` automatically
 // For Switch thumb
 <Switch.Thumb asChild>
   <motion.div
-    className="block h-5 w-5 bg-white rounded-full"
+    className="block h-5 w-5 bg-neutral-50 rounded-full"
     animate={{ x: checked ? 20 : 0 }}
     transition={{ type: 'spring', stiffness: 500, damping: 30 }}
   />

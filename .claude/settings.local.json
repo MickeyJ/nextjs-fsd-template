@@ -9,7 +9,10 @@
       "Bash(do if [ ! -f \"$dir/index.ts\" ])",
       "Bash(then echo \"Need index.ts: $dir\")",
       "Bash(npm run typecheck:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "WebSearch",
+      "Bash(then echo \"Missing: $dir\")",
+      "Bash(grep:*)"
     ],
     "deny": [],
     "ask": []

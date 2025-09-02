@@ -13,7 +13,11 @@ const HoverCardContent = forwardRef<
   ComponentRef<typeof HoverCardPrimitive.Content>,
   ComponentPropsWithoutRef<typeof HoverCardPrimitive.Content>
 >(({ className, align = 'center', sideOffset = 4, children }, ref) => (
-  <HoverCardPrimitive.Content asChild sideOffset={sideOffset} align={align}>
+  <HoverCardPrimitive.Content
+    asChild
+    sideOffset={sideOffset}
+    align={align}
+  >
     <motion.div
       ref={ref}
       initial={{ opacity: 0, scale: 0.95 }}
@@ -21,7 +25,7 @@ const HoverCardContent = forwardRef<
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.2 }}
       className={cn(
-        'z-50 w-64 rounded-md border border-gray-200 bg-white p-4 text-gray-900 shadow-md outline-none',
+        'z-50 w-64 rounded-md border border-neutral-200 bg-neutral-50 p-4 text-neutral-900 shadow-md outline-none',
         className
       )}
     >

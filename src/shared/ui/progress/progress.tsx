@@ -6,29 +6,26 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { forwardRef, type ComponentPropsWithoutRef, type ComponentRef } from 'react';
 import { cn } from '@/shared/lib/utils';
 
-const progressVariants = cva(
-  'relative h-4 w-full overflow-hidden rounded-full bg-gray-200',
-  {
-    variants: {
-      variant: {
-        default: '[&>div]:bg-primary-500',
-        secondary: '[&>div]:bg-secondary-500',
-        success: '[&>div]:bg-green-500',
-        warning: '[&>div]:bg-yellow-500',
-        danger: '[&>div]:bg-red-500',
-      },
-      size: {
-        sm: 'h-2',
-        md: 'h-4',
-        lg: 'h-6',
-      },
+const progressVariants = cva('relative h-4 w-full overflow-hidden rounded-full bg-neutral-200', {
+  variants: {
+    variant: {
+      default: '[&>div]:bg-primary-500',
+      secondary: '[&>div]:bg-secondary-500',
+      success: '[&>div]:bg-green-500',
+      warning: '[&>div]:bg-yellow-500',
+      danger: '[&>div]:bg-error-500',
     },
-    defaultVariants: {
-      variant: 'default',
-      size: 'md',
+    size: {
+      sm: 'h-2',
+      md: 'h-4',
+      lg: 'h-6',
     },
-  }
-);
+  },
+  defaultVariants: {
+    variant: 'default',
+    size: 'md',
+  },
+});
 
 export type ProgressProps = ComponentPropsWithoutRef<typeof ProgressPrimitive.Root> &
   VariantProps<typeof progressVariants>;

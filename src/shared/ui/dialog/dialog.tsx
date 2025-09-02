@@ -15,10 +15,13 @@ const DialogOverlay = forwardRef<
   ComponentRef<typeof DialogPrimitive.Overlay>,
   ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
 >(({ className }, ref) => (
-  <DialogPrimitive.Overlay asChild forceMount>
+  <DialogPrimitive.Overlay
+    asChild
+    forceMount
+  >
     <motion.div
       ref={ref}
-      className={cn('fixed inset-0 z-50 bg-black/50 backdrop-blur-sm', className)}
+      className={cn('fixed inset-0 z-50 bg-neutral-950/50 backdrop-blur-sm', className)}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -34,11 +37,14 @@ const DialogContent = forwardRef<
 >(({ className, children, ...props }, ref) => (
   <DialogPortal forceMount>
     <DialogOverlay />
-    <DialogPrimitive.Content asChild forceMount>
+    <DialogPrimitive.Content
+      asChild
+      forceMount
+    >
       <motion.div
         ref={ref}
         className={cn(
-          'fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg gap-4 border border-gray-200 bg-white p-6 shadow-lg sm:rounded-lg',
+          'fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg gap-4 border border-neutral-200 bg-neutral-50 p-6 shadow-lg sm:rounded-lg text-neutral-950',
           className
         )}
         initial={{ opacity: 0, scale: 0.95, x: '-50%', y: '-50%' }}
@@ -47,7 +53,7 @@ const DialogContent = forwardRef<
         transition={{ type: 'spring', duration: 0.3 }}
       >
         {children}
-        <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-white transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-gray-950 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-gray-100 data-[state=open]:text-gray-500">
+        <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-neutral-50 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-neutral-100 data-[state=open]:text-neutral-500">
           <X className="h-4 w-4" />
           <span className="sr-only">Close</span>
         </DialogPrimitive.Close>
@@ -58,12 +64,18 @@ const DialogContent = forwardRef<
 DialogContent.displayName = DialogPrimitive.Content.displayName;
 
 const DialogHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
-  <div className={cn('flex flex-col space-y-1.5 text-center sm:text-left', className)} {...props} />
+  <div
+    className={cn('flex flex-col space-y-1.5 text-center sm:text-left', className)}
+    {...props}
+  />
 );
 DialogHeader.displayName = 'DialogHeader';
 
 const DialogFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
-  <div className={cn('flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2', className)} {...props} />
+  <div
+    className={cn('flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2', className)}
+    {...props}
+  />
 );
 DialogFooter.displayName = 'DialogFooter';
 
@@ -83,7 +95,11 @@ const DialogDescription = forwardRef<
   ComponentRef<typeof DialogPrimitive.Description>,
   ComponentPropsWithoutRef<typeof DialogPrimitive.Description>
 >(({ className, ...props }, ref) => (
-  <DialogPrimitive.Description ref={ref} className={cn('text-sm text-gray-500', className)} {...props} />
+  <DialogPrimitive.Description
+    ref={ref}
+    className={cn('text-sm text-neutral-500', className)}
+    {...props}
+  />
 ));
 DialogDescription.displayName = DialogPrimitive.Description.displayName;
 
@@ -96,7 +112,7 @@ export function DialogWithAnimation({
 }: ComponentPropsWithoutRef<typeof Dialog>) {
   const [internalOpen, setInternalOpen] = useState(false);
   const isOpen = controlledOpen ?? internalOpen;
-  
+
   return (
     <Dialog
       open={isOpen}
@@ -106,9 +122,7 @@ export function DialogWithAnimation({
       }}
       {...props}
     >
-      <AnimatePresence>
-        {isOpen && children}
-      </AnimatePresence>
+      <AnimatePresence>{isOpen && children}</AnimatePresence>
     </Dialog>
   );
 }

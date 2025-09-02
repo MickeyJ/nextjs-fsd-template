@@ -1,55 +1,61 @@
-// src/shared/ui/section/section.tsx
 'use client';
 
-import { motion, useInView } from 'motion/react';
-import { type ReactNode, useRef } from 'react';
+import { forwardRef, useRef } from 'react';
+import { motion, useInView, type HTMLMotionProps } from 'motion/react';
+import { cva, type VariantProps } from 'class-variance-authority';
+import { cn } from '@/shared/lib/utils';
 
-export interface SectionProps {
-  children: ReactNode;
-  className?: string;
+const sectionVariants = cva('', {
+  variants: {
+    padding: {
+      none: 'p-0',
+      xs: 'p-2 sm:p-4',
+      sm: 'p-4 sm:p-6',
+      md: 'p-6 sm:p-8',
+      lg: 'p-8 sm:p-10 lg:p-12',
+      xl: 'p-12 sm:p-12 lg:p-14',
+    },
+  },
+  defaultVariants: {
+    padding: 'sm',
+  },
+});
+
+export interface SectionProps
+  extends Omit<React.HTMLAttributes<HTMLElement>, 'onDrag' | 'onDragEnd' | 'onDragStart'>,
+    VariantProps<typeof sectionVariants> {
   animate?: boolean;
-  padding?: 'none' | 'sm' | 'md' | 'lg' | 'xl';
-  id?: string;
 }
 
-export function Section({ children, className = '', animate = false, padding = 'lg', id }: SectionProps) {
-  const ref = useRef<HTMLElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+export const Section = forwardRef<HTMLElement, SectionProps>(
+  ({ className, padding, animate = false, children, ...props }, ref) => {
+    const internalRef = useRef<HTMLElement>(null);
+    const isInView = useInView(internalRef, { once: true, margin: '-100px' });
+    const elementRef = ref || internalRef;
 
-  const paddingStyles = {
-    none: '',
-    sm: 'py-8 sm:py-12',
-    md: 'py-12 sm:py-16',
-    lg: 'py-16 sm:py-20 lg:py-24',
-    xl: 'py-20 sm:py-28 lg:py-32',
-  };
+    if (animate) {
+      const motionProps: HTMLMotionProps<'section'> = {
+        ref: elementRef as React.Ref<HTMLElement>,
+        initial: { opacity: 0, y: 20 },
+        animate: isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 },
+        transition: { duration: 0.6, ease: 'easeOut' },
+        className: cn(sectionVariants({ padding }), className),
+        children,
+      };
 
-  const MotionSection = motion.section;
-  const paddingClass = paddingStyles[padding];
-  const combinedClassName = `${paddingClass} ${className}`;
+      return <motion.section {...motionProps} />;
+    }
 
-  if (animate) {
     return (
-      <MotionSection
-        ref={ref}
-        id={id}
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
-        className={combinedClassName}
+      <section
+        ref={elementRef}
+        className={cn(sectionVariants({ padding }), className)}
+        {...props}
       >
         {children}
-      </MotionSection>
+      </section>
     );
   }
+);
 
-  return (
-    <section
-      ref={ref}
-      id={id}
-      className={combinedClassName}
-    >
-      {children}
-    </section>
-  );
-}
+Section.displayName = 'Section';

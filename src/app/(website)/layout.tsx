@@ -1,22 +1,29 @@
 import '../globals.css';
 
 import type { Metadata } from 'next';
-import { Bebas_Neue, Quicksand } from 'next/font/google';
+import { Solway, Noto_Sans_Mono, Noto_Sans, Roboto_Condensed, Roboto_Flex, Roboto_Mono } from 'next/font/google';
 
 import { COMPANY } from '@/shared/lib/constants';
 // import { Footer } from '@/widgets/footer/ui/footer';
-// import { Header } from '@/widgets/header/ui/header';
+import Header from '@/widgets/header/ui/header';
+import { getPreferredTheme } from '@/shared/lib/utils';
 
-const quicksand = Quicksand({
-  variable: '--font-quicksand',
-  subsets: ['latin'],
-});
-
-const bebasNeue = Bebas_Neue({
-  variable: '--font-bebas-neue',
+const headerFont = Roboto_Condensed({
+  variable: '--ypng-font-family-header',
   subsets: ['latin'],
   weight: ['400'],
 });
+
+const bodyFont = Roboto_Flex({
+  variable: '--ypng-font-family-body',
+  subsets: ['latin'],
+});
+
+const bodyFontMono = Roboto_Mono({
+  variable: '--ypng-font-family-body-mono',
+  subsets: ['latin'],
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(COMPANY.website),
   title: {
@@ -75,8 +82,8 @@ export const metadata: Metadata = {
 export default function WebsiteLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${quicksand.variable} ${bebasNeue.variable} antialiased`}>
-        {/* <Header /> */}
+      <body className={`${bodyFont.variable} ${bodyFontMono.variable} ${headerFont.variable} antialiased`}>
+        <Header />
         <main>{children}</main>
         {/* <Footer /> */}
       </body>

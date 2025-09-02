@@ -15,3 +15,10 @@ export {
   ContextMenuSubTrigger,
   ContextMenuRadioGroup,
 } from './context-menu';
+
+export type {
+  ContextMenuProps,
+  ContextMenuTriggerProps,
+  ContextMenuContentProps,
+  ContextMenuItemProps,
+} from './context-menu';

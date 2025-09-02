@@ -23,7 +23,7 @@ const ToolbarButton = forwardRef<
   <ToolbarPrimitive.Button
     ref={ref}
     className={cn(
-      'inline-flex h-10 w-10 items-center justify-center rounded-md text-sm font-medium ring-offset-white transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-gray-100 data-[state=on]:text-gray-900',
+      'inline-flex h-10 w-10 items-center justify-center rounded-md text-sm font-medium ring-offset-neutral-50 transition-colors hover:bg-neutral-100 hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-neutral-100 data-[state=on]:text-neutral-900',
       className
     )}
     {...props}
@@ -37,7 +37,7 @@ const ToolbarSeparator = forwardRef<
 >(({ className, ...props }, ref) => (
   <ToolbarPrimitive.Separator
     ref={ref}
-    className={cn('mx-2 h-5 w-[1px] bg-gray-200', className)}
+    className={cn('mx-2 h-5 w-[1px] bg-neutral-200', className)}
     {...props}
   />
 ));
@@ -50,7 +50,7 @@ const ToolbarLink = forwardRef<
   <ToolbarPrimitive.Link
     ref={ref}
     className={cn(
-      'inline-flex h-10 items-center justify-center rounded-md px-3 text-sm font-medium ring-offset-white transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-gray-100 data-[state=on]:text-gray-900',
+      'inline-flex h-10 items-center justify-center rounded-md px-3 text-sm font-medium ring-offset-neutral-50 transition-colors hover:bg-neutral-100 hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-neutral-100 data-[state=on]:text-neutral-900',
       className
     )}
     {...props}
@@ -67,7 +67,7 @@ const ToolbarToggleItem = forwardRef<
   <ToolbarPrimitive.ToggleItem
     ref={ref}
     className={cn(
-      'inline-flex h-10 w-10 items-center justify-center rounded-md text-sm font-medium ring-offset-white transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-gray-100 data-[state=on]:text-gray-900',
+      'inline-flex h-10 w-10 items-center justify-center rounded-md text-sm font-medium ring-offset-neutral-50 transition-colors hover:bg-neutral-100 hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-neutral-100 data-[state=on]:text-neutral-900',
       className
     )}
     {...props}
@@ -75,14 +75,7 @@ const ToolbarToggleItem = forwardRef<
 ));
 ToolbarToggleItem.displayName = ToolbarPrimitive.ToggleItem.displayName;
 
-export {
-  Toolbar,
-  ToolbarButton,
-  ToolbarSeparator,
-  ToolbarLink,
-  ToolbarToggleGroup,
-  ToolbarToggleItem,
-};
+export { Toolbar, ToolbarButton, ToolbarSeparator, ToolbarLink, ToolbarToggleGroup, ToolbarToggleItem };
 
 export type ToolbarProps = ComponentPropsWithoutRef<typeof ToolbarPrimitive.Root>;
 export type ToolbarButtonProps = ComponentPropsWithoutRef<typeof ToolbarPrimitive.Button>;

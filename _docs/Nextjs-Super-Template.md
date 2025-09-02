@@ -805,7 +805,7 @@ npm run generate:graphql
   }
 
   body {
-    @apply text-gray-900 bg-white;
+    @apply text-neutral-900 bg-neutral-50;
   }
 }
 

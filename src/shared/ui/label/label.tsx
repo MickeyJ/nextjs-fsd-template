@@ -10,8 +10,8 @@ const labelVariants = cva(
   {
     variants: {
       variant: {
-        default: 'text-gray-900',
-        error: 'text-red-600',
+        default: 'text-neutral-900',
+        error: 'text-error-600',
         success: 'text-green-600',
         warning: 'text-yellow-600',
       },

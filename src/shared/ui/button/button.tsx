@@ -6,22 +6,27 @@ import { forwardRef, type ComponentPropsWithoutRef, type ReactNode } from 'react
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/shared/lib/utils'; // Your cn utility (usually clsx + tailwind-merge)
 
-const buttonVariants = cva(
+export const buttonVariants = cva(
   // Base classes
-  'relative inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed',
+  'relative inline-flex items-center justify-center font-medium border-2 border-transparent transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed',
   {
     variants: {
       variant: {
-        primary: 'bg-primary-400 text-white hover:bg-primary-500 active:bg-primary-600 focus-visible:ring-primary-500',
+        primary:
+          'bg-primary-400 text-btn-light hover:bg-primary-500 active:bg-primary-600 focus-visible:ring-primary-500',
         primaryInverted:
-          'bg-white text-primary-500 hover:bg-gray-10 active:bg-primary-700 focus-visible:ring-primary-500',
+          'bg-neutral-50 text-primary-500 hover:bg-neutral-100 active:bg-primary-700 active:text-btn-light focus-visible:ring-primary-500',
         secondary:
-          'bg-secondary-400 text-white hover:bg-secondary-500 active:bg-secondary-600 focus-visible:ring-secondary-500',
-        neutral: 'bg-neutral-500 text-white hover:bg-neutral-600 active:bg-neutral-700 focus-visible:ring-neutral-500',
+          'bg-secondary-400 text-btn-light hover:bg-secondary-500 active:bg-secondary-600 focus-visible:ring-secondary-500',
+        neutral:
+          'bg-neutral-500 text-btn-light hover:bg-neutral-600 active:bg-neutral-700 focus-visible:ring-neutral-500',
         outline:
-          'border-2 border-gray-300 bg-transparent hover:bg-gray-50 active:bg-gray-100 focus-visible:ring-gray-500',
-        ghost: 'bg-transparent text-gray-700 hover:bg-gray-100 active:bg-gray-200 focus-visible:ring-gray-500',
-        destructive: 'bg-red-500 text-white hover:bg-red-600 active:bg-red-700 focus-visible:ring-red-500',
+          'border-neutral-300 bg-transparent hover:bg-neutral-50 active:bg-neutral-100 focus-visible:ring-neutral-500',
+        accent:
+          'border-accent-500 text-accent-500 bg-transparent hover:bg-accent-100 active:bg-accent-100 focus-visible:ring-accent-500',
+        ghost:
+          'bg-transparent text-neutral-700 hover:bg-neutral-100 active:bg-neutral-200 focus-visible:ring-neutral-500',
+        destructive: 'bg-error-500 text-btn-light hover:bg-error-600 active:bg-error-700 focus-visible:ring-error-500',
         link: 'text-primary-500 underline-offset-4 hover:underline',
       },
       size: {

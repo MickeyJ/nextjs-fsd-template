@@ -5,27 +5,23 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { forwardRef, type ComponentPropsWithoutRef, type ComponentRef } from 'react';
 import { cn } from '@/shared/lib/utils';
 
-const avatarVariants = cva(
-  'relative flex shrink-0 overflow-hidden rounded-full',
-  {
-    variants: {
-      size: {
-        xs: 'h-6 w-6',
-        sm: 'h-8 w-8',
-        md: 'h-10 w-10',
-        lg: 'h-12 w-12',
-        xl: 'h-14 w-14',
-        '2xl': 'h-16 w-16',
-      },
+const avatarVariants = cva('relative flex shrink-0 overflow-hidden rounded-full', {
+  variants: {
+    size: {
+      xs: 'h-6 w-6',
+      sm: 'h-8 w-8',
+      md: 'h-10 w-10',
+      lg: 'h-12 w-12',
+      xl: 'h-14 w-14',
+      '2xl': 'h-16 w-16',
     },
-    defaultVariants: {
-      size: 'md',
-    },
-  }
-);
+  },
+  defaultVariants: {
+    size: 'md',
+  },
+});
 
-export type AvatarProps = ComponentPropsWithoutRef<typeof AvatarPrimitive.Root> &
-  VariantProps<typeof avatarVariants>;
+export type AvatarProps = ComponentPropsWithoutRef<typeof AvatarPrimitive.Root> & VariantProps<typeof avatarVariants>;
 
 const Avatar = forwardRef<ComponentRef<typeof AvatarPrimitive.Root>, AvatarProps>(
   ({ className, size, ...props }, ref) => (
@@ -57,7 +53,7 @@ const AvatarFallback = forwardRef<
   <AvatarPrimitive.Fallback
     ref={ref}
     className={cn(
-      'flex h-full w-full items-center justify-center rounded-full bg-gray-100 text-gray-600',
+      'flex h-full w-full items-center justify-center rounded-full bg-neutral-100 text-neutral-600',
       className
     )}
     {...props}

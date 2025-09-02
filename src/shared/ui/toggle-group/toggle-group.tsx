@@ -5,23 +5,20 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { forwardRef, type ComponentPropsWithoutRef, type ComponentRef } from 'react';
 import { cn } from '@/shared/lib/utils';
 
-const toggleGroupVariants = cva(
-  'inline-flex items-center justify-center rounded-md',
-  {
-    variants: {
-      variant: {
-        default: 'bg-gray-100',
-        outline: 'border border-gray-300',
-      },
+const toggleGroupVariants = cva('inline-flex items-center justify-center rounded-md', {
+  variants: {
+    variant: {
+      default: 'bg-neutral-100',
+      outline: 'border border-neutral-300',
     },
-    defaultVariants: {
-      variant: 'default',
-    },
-  }
-);
+  },
+  defaultVariants: {
+    variant: 'default',
+  },
+});
 
 const toggleGroupItemVariants = cva(
-  'inline-flex items-center justify-center text-sm font-medium transition-colors hover:bg-gray-200 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-white data-[state=on]:text-gray-900 data-[state=on]:shadow-sm',
+  'inline-flex items-center justify-center text-sm font-medium transition-colors hover:bg-neutral-200 hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-neutral-50 data-[state=on]:text-neutral-900 data-[state=on]:shadow-sm',
   {
     variants: {
       variant: {

@@ -1,78 +1,593 @@
 @import 'tailwindcss';
 
-/* Custom CSS Variables */
 :root {
-  /* Colors */
-  --color-blue-50: #eff6ff;
-  --color-blue-100: #dbeafe;
-  --color-blue-200: #bfdbfe;
-  --color-blue-300: #93c5fd;
-  --color-blue-400: #60a5fa;
-  --color-blue-500: #3b82f6;
-  --color-blue-600: #2563eb;
-  --color-blue-700: #1d4ed8;
-  --color-blue-800: #1e40af;
-  --color-blue-900: #1e3a8a;
+  /* Lightness values */
+  --l-0: 0.97;
+  --l-1: 0.93;
+  --l-2: 0.87;
+  --l-3: 0.79;
+  --l-4: 0.7;
+  --l-6: 0.52;
+  --l-7: 0.45;
+  --l-8: 0.38;
+  --l-9: 0.31;
+  --l-10: 0.23;
+
+  /* Map for light mode (default) */
+  --shade-0: var(--l-0);
+  --shade-1: var(--l-1);
+  --shade-2: var(--l-2);
+  --shade-3: var(--l-3);
+  --shade-4: var(--l-4);
+  --shade-6: var(--l-6);
+  --shade-7: var(--l-7);
+  --shade-8: var(--l-8);
+  --shade-9: var(--l-9);
+  --shade-10: var(--l-10);
+
+  /* Base colors (base shades) */
+  /* --ypng-color-primary: #3b82f6;
+  --ypng-color-secondary: #8b5cf6;
+  --ypng-color-accent: #cfd435ff;
+  --ypng-color-success: #22c55e;
+  --ypng-color-warning: #f59e0b;
+  --ypng-color-error: #ef4444;
+  --ypng-color-info: #0ea5e9; */
+
+  --ypng-color-primary: #008f88;
+  --ypng-color-secondary: #ff6495;
+  --ypng-color-accent: #ffd60a;
+  --ypng-color-success: #22c55e;
+  --ypng-color-warning: #fb923c;
+  --ypng-color-error: #e11d34;
+  --ypng-color-info: #0ea5e9;
+
+  --ypng-color-neutral: #6e797fff;
+
+  /* Primary - Blue */
+  --ypng-color-primary-50: oklch(from var(--ypng-color-primary) var(--shade-0) c h);
+  --ypng-color-primary-100: oklch(from var(--ypng-color-primary) var(--shade-1) c h);
+  --ypng-color-primary-200: oklch(from var(--ypng-color-primary) var(--shade-2) c h);
+  --ypng-color-primary-300: oklch(from var(--ypng-color-primary) var(--shade-3) c h);
+  --ypng-color-primary-400: oklch(from var(--ypng-color-primary) var(--shade-4) c h);
+  --ypng-color-primary-500: var(--ypng-color-primary);
+  --ypng-color-primary-600: oklch(from var(--ypng-color-primary) var(--shade-6) c h);
+  --ypng-color-primary-700: oklch(from var(--ypng-color-primary) var(--shade-7) c h);
+  --ypng-color-primary-800: oklch(from var(--ypng-color-primary) var(--shade-8) c h);
+  --ypng-color-primary-900: oklch(from var(--ypng-color-primary) var(--shade-9) c h);
+  --ypng-color-primary-950: oklch(from var(--ypng-color-primary) var(--shade-10) c h);
+
+  /* Secondary - Violet */
+  --ypng-color-secondary-50: oklch(from var(--ypng-color-secondary) var(--shade-0) c h);
+  --ypng-color-secondary-100: oklch(from var(--ypng-color-secondary) var(--shade-1) c h);
+  --ypng-color-secondary-200: oklch(from var(--ypng-color-secondary) var(--shade-2) c h);
+  --ypng-color-secondary-300: oklch(from var(--ypng-color-secondary) var(--shade-3) c h);
+  --ypng-color-secondary-400: oklch(from var(--ypng-color-secondary) var(--shade-4) c h);
+  --ypng-color-secondary-500: var(--ypng-color-secondary);
+  --ypng-color-secondary-600: oklch(from var(--ypng-color-secondary) var(--shade-6) c h);
+  --ypng-color-secondary-700: oklch(from var(--ypng-color-secondary) var(--shade-7) c h);
+  --ypng-color-secondary-800: oklch(from var(--ypng-color-secondary) var(--shade-8) c h);
+  --ypng-color-secondary-900: oklch(from var(--ypng-color-secondary) var(--shade-9) c h);
+  --ypng-color-secondary-950: oklch(from var(--ypng-color-secondary) var(--shade-10) c h);
+
+  /* Accent - Teal */
+  --ypng-color-accent-50: oklch(from var(--ypng-color-accent) var(--shade-0) c h);
+  --ypng-color-accent-100: oklch(from var(--ypng-color-accent) var(--shade-1) c h);
+  --ypng-color-accent-200: oklch(from var(--ypng-color-accent) var(--shade-2) c h);
+  --ypng-color-accent-300: oklch(from var(--ypng-color-accent) var(--shade-3) c h);
+  --ypng-color-accent-400: oklch(from var(--ypng-color-accent) var(--shade-4) c h);
+  --ypng-color-accent-500: var(--ypng-color-accent);
+  --ypng-color-accent-600: oklch(from var(--ypng-color-accent) var(--shade-6) c h);
+  --ypng-color-accent-700: oklch(from var(--ypng-color-accent) var(--shade-7) c h);
+  --ypng-color-accent-800: oklch(from var(--ypng-color-accent) var(--shade-8) c h);
+  --ypng-color-accent-900: oklch(from var(--ypng-color-accent) var(--shade-9) c h);
+  --ypng-color-accent-950: oklch(from var(--ypng-color-accent) var(--shade-10) c h);
+
+  /* Success - Green */
+  --ypng-color-success-50: oklch(from var(--ypng-color-success) var(--shade-0) c h);
+  --ypng-color-success-100: oklch(from var(--ypng-color-success) var(--shade-1) c h);
+  --ypng-color-success-200: oklch(from var(--ypng-color-success) var(--shade-2) c h);
+  --ypng-color-success-300: oklch(from var(--ypng-color-success) var(--shade-3) c h);
+  --ypng-color-success-400: oklch(from var(--ypng-color-success) var(--shade-4) c h);
+  --ypng-color-success-500: var(--ypng-color-success);
+  --ypng-color-success-600: oklch(from var(--ypng-color-success) var(--shade-6) c h);
+  --ypng-color-success-700: oklch(from var(--ypng-color-success) var(--shade-7) c h);
+  --ypng-color-success-800: oklch(from var(--ypng-color-success) var(--shade-8) c h);
+  --ypng-color-success-900: oklch(from var(--ypng-color-success) var(--shade-9) c h);
+  --ypng-color-success-950: oklch(from var(--ypng-color-success) var(--shade-10) c h);
+
+  /* Warning - Amber */
+  --ypng-color-warning-50: oklch(from var(--ypng-color-warning) var(--shade-0) c h);
+  --ypng-color-warning-100: oklch(from var(--ypng-color-warning) var(--shade-1) c h);
+  --ypng-color-warning-200: oklch(from var(--ypng-color-warning) var(--shade-2) c h);
+  --ypng-color-warning-300: oklch(from var(--ypng-color-warning) var(--shade-3) c h);
+  --ypng-color-warning-400: oklch(from var(--ypng-color-warning) var(--shade-4) c h);
+  --ypng-color-warning-500: var(--ypng-color-warning);
+  --ypng-color-warning-600: oklch(from var(--ypng-color-warning) var(--shade-6) c h);
+  --ypng-color-warning-700: oklch(from var(--ypng-color-warning) var(--shade-7) c h);
+  --ypng-color-warning-800: oklch(from var(--ypng-color-warning) var(--shade-8) c h);
+  --ypng-color-warning-900: oklch(from var(--ypng-color-warning) var(--shade-9) c h);
+  --ypng-color-warning-950: oklch(from var(--ypng-color-warning) var(--shade-10) c h);
+
+  /* Error - Red */
+  --ypng-color-error-50: oklch(from var(--ypng-color-error) var(--shade-0) c h);
+  --ypng-color-error-100: oklch(from var(--ypng-color-error) var(--shade-1) c h);
+  --ypng-color-error-200: oklch(from var(--ypng-color-error) var(--shade-2) c h);
+  --ypng-color-error-300: oklch(from var(--ypng-color-error) var(--shade-3) c h);
+  --ypng-color-error-400: oklch(from var(--ypng-color-error) var(--shade-4) c h);
+  --ypng-color-error-500: var(--ypng-color-error);
+  --ypng-color-error-600: oklch(from var(--ypng-color-error) var(--shade-6) c h);
+  --ypng-color-error-700: oklch(from var(--ypng-color-error) var(--shade-7) c h);
+  --ypng-color-error-800: oklch(from var(--ypng-color-error) var(--shade-8) c h);
+  --ypng-color-error-900: oklch(from var(--ypng-color-error) var(--shade-9) c h);
+  --ypng-color-error-950: oklch(from var(--ypng-color-error) var(--shade-10) c h);
+
+  /* Info - Sky */
+  --ypng-color-info-50: oklch(from var(--ypng-color-info) var(--shade-0) c h);
+  --ypng-color-info-100: oklch(from var(--ypng-color-info) var(--shade-1) c h);
+  --ypng-color-info-200: oklch(from var(--ypng-color-info) var(--shade-2) c h);
+  --ypng-color-info-300: oklch(from var(--ypng-color-info) var(--shade-3) c h);
+  --ypng-color-info-400: oklch(from var(--ypng-color-info) var(--shade-4) c h);
+  --ypng-color-info-500: var(--ypng-color-info);
+  --ypng-color-info-600: oklch(from var(--ypng-color-info) var(--shade-6) c h);
+  --ypng-color-info-700: oklch(from var(--ypng-color-info) var(--shade-7) c h);
+  --ypng-color-info-800: oklch(from var(--ypng-color-info) var(--shade-8) c h);
+  --ypng-color-info-900: oklch(from var(--ypng-color-info) var(--shade-9) c h);
+  --ypng-color-info-950: oklch(from var(--ypng-color-info) var(--shade-10) c h);
+
+  /* Neutral - Slate */
+  --ypng-color-neutral-50: oklch(from var(--ypng-color-neutral) var(--shade-0) c h);
+  --ypng-color-neutral-100: oklch(from var(--ypng-color-neutral) var(--shade-1) c h);
+  --ypng-color-neutral-200: oklch(from var(--ypng-color-neutral) var(--shade-2) c h);
+  --ypng-color-neutral-300: oklch(from var(--ypng-color-neutral) var(--shade-3) c h);
+  --ypng-color-neutral-400: oklch(from var(--ypng-color-neutral) var(--shade-4) c h);
+  --ypng-color-neutral-500: var(--ypng-color-neutral);
+  --ypng-color-neutral-600: oklch(from var(--ypng-color-neutral) var(--shade-6) c h);
+  --ypng-color-neutral-700: oklch(from var(--ypng-color-neutral) var(--shade-7) c h);
+  --ypng-color-neutral-800: oklch(from var(--ypng-color-neutral) var(--shade-8) c h);
+  --ypng-color-neutral-900: oklch(from var(--ypng-color-neutral) var(--shade-9) c h);
+  --ypng-color-neutral-950: oklch(from var(--ypng-color-neutral) var(--shade-10) c h);
+
+  --ypng-color-btn-text-light: oklch(from var(--ypng-color-neutral) var(--l-0) c h);
+  --ypng-color-btn-text-dark: oklch(from var(--ypng-color-neutral) var(--l-10) c h);
+
+  /* ========================================
+     Typography & Spacing
+     ======================================== */
+
+  /* Font Sizes - Fluid Typography */
+  --ypng-font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --ypng-font-size-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --ypng-font-size-base: clamp(1rem, 0.925rem + 0.375vw, 1.125rem);
+  --ypng-font-size-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  --ypng-font-size-xl: clamp(1.25rem, 1.125rem + 0.625vw, 1.5rem);
+  --ypng-font-size-2xl: clamp(1.5rem, 1.25rem + 1.25vw, 1.875rem);
+  --ypng-font-size-3xl: clamp(1.875rem, 1.5rem + 1.875vw, 2.25rem);
+  --ypng-font-size-4xl: clamp(2.25rem, 1.75rem + 2.5vw, 3rem);
+  --ypng-font-size-5xl: clamp(3rem, 2rem + 5vw, 4rem);
+
+  /* Spacing Scale */
+  --ypng-spacing-0: 0;
+  --ypng-spacing-px: 1px;
+  --ypng-spacing-0-5: 0.125rem;
+  --ypng-spacing-1: 0.25rem;
+  --ypng-spacing-2: 0.5rem;
+  --ypng-spacing-3: 0.75rem;
+  --ypng-spacing-4: 1rem;
+  --ypng-spacing-5: 1.25rem;
+  --ypng-spacing-6: 1.5rem;
+  --ypng-spacing-8: 2rem;
+  --ypng-spacing-10: 2.5rem;
+  --ypng-spacing-12: 3rem;
+  --ypng-spacing-16: 4rem;
+  --ypng-spacing-20: 5rem;
+  --ypng-spacing-24: 6rem;
+
+  /* Border Radius */
+  --ypng-radius-none: 0;
+  --ypng-radius-sm: 0.125rem;
+  --ypng-radius-default: 0.25rem;
+  --ypng-radius-md: 0.375rem;
+  --ypng-radius-lg: 0.5rem;
+  --ypng-radius-xl: 0.75rem;
+  --ypng-radius-2xl: 1rem;
+  --ypng-radius-3xl: 1.5rem;
+  --ypng-radius-full: 9999px;
 
   /* Layout */
-  --max-width-sm: 42rem;
-  --max-width-md: 48rem;
-  --max-width-lg: 64rem;
-  --max-width-xl: 80rem;
-  --max-width-2xl: 96rem;
-  --max-width-full: 100%;
+  --ypng-max-width-xs: 20rem;
+  --ypng-max-width-sm: 24rem;
+  --ypng-max-width-md: 28rem;
+  --ypng-max-width-lg: 32rem;
+  --ypng-max-width-xl: 36rem;
+  --ypng-max-width-2xl: 42rem;
+  --ypng-max-width-3xl: 48rem;
+  --ypng-max-width-4xl: 56rem;
+  --ypng-max-width-5xl: 64rem;
+  --ypng-max-width-6xl: 72rem;
+  --ypng-max-width-7xl: 80rem;
+  --ypng-max-width-full: 100%;
 
-  /* Animations */
-  --animation-spin: spin 1s linear infinite;
-  --animation-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  --animation-bounce: bounce 1s infinite;
+  /* Z-Index Scale */
+  --ypng-z-0: 0;
+  --ypng-z-10: 10;
+  --ypng-z-20: 20;
+  --ypng-z-30: 30;
+  --ypng-z-40: 40;
+  --ypng-z-50: 50;
+  --ypng-z-dropdown: 1000;
+  --ypng-z-sticky: 1020;
+  --ypng-z-fixed: 1030;
+  --ypng-z-modal-backdrop: 1040;
+  --ypng-z-modal: 1050;
+  --ypng-z-popover: 1060;
+  --ypng-z-tooltip: 1070;
+  --ypng-z-notification: 1080;
+
+  /* Animations & Transitions */
+  --ypng-duration-75: 75ms;
+  --ypng-duration-100: 100ms;
+  --ypng-duration-150: 150ms;
+  --ypng-duration-200: 200ms;
+  --ypng-duration-300: 300ms;
+  --ypng-duration-500: 500ms;
+  --ypng-duration-700: 700ms;
+  --ypng-duration-1000: 1000ms;
+
+  --ypng-ease-linear: linear;
+  --ypng-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ypng-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ypng-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ypng-ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ypng-ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* Shadows */
+  --ypng-shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --ypng-shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --ypng-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --ypng-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --ypng-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --ypng-shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --ypng-shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  --ypng-shadow-card: var(--ypng-shadow-md);
+  --ypng-shadow-card-hover: var(--ypng-shadow-xl);
+
+  /* Blur values */
+  --ypng-blur-none: 0;
+  --ypng-blur-sm: 4px;
+  --ypng-blur-default: 8px;
+  --ypng-blur-md: 12px;
+  --ypng-blur-lg: 16px;
+  --ypng-blur-xl: 24px;
+  --ypng-blur-2xl: 40px;
+  --ypng-blur-3xl: 64px;
+
+  /* Container Queries */
+  --ypng-container-xs: 20rem;
+  --ypng-container-sm: 24rem;
+  --ypng-container-md: 28rem;
+  --ypng-container-lg: 32rem;
+  --ypng-container-xl: 36rem;
 }
 
-/* Dark mode variables */
+/* ========================================
+   Dark Mode Color System
+   ======================================== */
+:root.dark {
+  /* Map for dark mode (default) */
+  --shade-0: var(--l-10);
+  --shade-1: var(--l-9);
+  --shade-2: var(--l-8);
+  --shade-3: var(--l-7);
+  --shade-4: var(--l-6);
+  --shade-6: var(--l-4);
+  --shade-7: var(--l-3);
+  --shade-8: var(--l-2);
+  --shade-9: var(--l-1);
+  --shade-10: var(--l-0);
+
+  /* Dark mode specific shadows */
+  --ypng-shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.1);
+  --ypng-shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.2), 0 1px 2px -1px rgb(0 0 0 / 0.2);
+  --ypng-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2);
+  --ypng-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.2), 0 4px 6px -4px rgb(0 0 0 / 0.2);
+  --ypng-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.2), 0 8px 10px -6px rgb(0 0 0 / 0.2);
+  --ypng-shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.5);
+}
+
 @media (prefers-color-scheme: dark) {
-  :root {
-    --color-blue-50: #1e3a8a;
-    --color-blue-100: #1e40af;
-    --color-blue-200: #1d4ed8;
-    --color-blue-300: #2563eb;
-    --color-blue-400: #3b82f6;
-    --color-blue-500: #60a5fa;
-    --color-blue-600: #93c5fd;
-    --color-blue-700: #bfdbfe;
-    --color-blue-800: #dbeafe;
-    --color-blue-900: #eff6ff;
+  :root:not(.light) {
+    /* Map for dark mode (default) */
+    --shade-0: var(--l-10);
+    --shade-1: var(--l-9);
+    --shade-2: var(--l-8);
+    --shade-3: var(--l-7);
+    --shade-4: var(--l-6);
+    --shade-6: var(--l-4);
+    --shade-7: var(--l-3);
+    --shade-8: var(--l-2);
+    --shade-9: var(--l-1);
+    --shade-10: var(--l-0);
+
+    /* Dark mode specific shadows */
+    --ypng-shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.1);
+    --ypng-shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.2), 0 1px 2px -1px rgb(0 0 0 / 0.2);
+    --ypng-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2);
+    --ypng-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.2), 0 4px 6px -4px rgb(0 0 0 / 0.2);
+    --ypng-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.2), 0 8px 10px -6px rgb(0 0 0 / 0.2);
+    --ypng-shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.5);
   }
 }
 
-/* Custom theme tokens for Tailwind CSS 4.0 */
+/* ========================================
+   Tailwind CSS 4.0 @theme Configuration
+   ======================================== */
 @theme inline {
-  /* --font-quicksand: var(--font-quicksand); */
-  --font-bebas-neue: var(--font-bebas);
+  --color-primary-50: var(--ypng-color-primary-50);
+  --color-primary-100: var(--ypng-color-primary-100);
+  --color-primary-200: var(--ypng-color-primary-200);
+  --color-primary-300: var(--ypng-color-primary-300);
+  --color-primary-400: var(--ypng-color-primary-400);
+  --color-primary-500: var(--ypng-color-primary-500);
+  --color-primary-600: var(--ypng-color-primary-600);
+  --color-primary-700: var(--ypng-color-primary-700);
+  --color-primary-800: var(--ypng-color-primary-800);
+  --color-primary-900: var(--ypng-color-primary-900);
+  --color-primary-950: var(--ypng-color-primary-950);
+  --color-primary: var(--ypng-color-primary-500);
 
-  /* Custom animations */
+  --color-secondary-50: var(--ypng-color-secondary-50);
+  --color-secondary-100: var(--ypng-color-secondary-100);
+  --color-secondary-200: var(--ypng-color-secondary-200);
+  --color-secondary-300: var(--ypng-color-secondary-300);
+  --color-secondary-400: var(--ypng-color-secondary-400);
+  --color-secondary-500: var(--ypng-color-secondary-500);
+  --color-secondary-600: var(--ypng-color-secondary-600);
+  --color-secondary-700: var(--ypng-color-secondary-700);
+  --color-secondary-800: var(--ypng-color-secondary-800);
+  --color-secondary-900: var(--ypng-color-secondary-900);
+  --color-secondary-950: var(--ypng-color-secondary-950);
+  --color-secondary: var(--ypng-color-secondary-500);
+
+  --color-accent-50: var(--ypng-color-accent-50);
+  --color-accent-100: var(--ypng-color-accent-100);
+  --color-accent-200: var(--ypng-color-accent-200);
+  --color-accent-300: var(--ypng-color-accent-300);
+  --color-accent-400: var(--ypng-color-accent-400);
+  --color-accent-500: var(--ypng-color-accent-500);
+  --color-accent-600: var(--ypng-color-accent-600);
+  --color-accent-700: var(--ypng-color-accent-700);
+  --color-accent-800: var(--ypng-color-accent-800);
+  --color-accent-900: var(--ypng-color-accent-900);
+  --color-accent-950: var(--ypng-color-accent-950);
+  --color-accent: var(--ypng-color-accent-500);
+
+  --color-success-50: var(--ypng-color-success-50);
+  --color-success-100: var(--ypng-color-success-100);
+  --color-success-200: var(--ypng-color-success-200);
+  --color-success-300: var(--ypng-color-success-300);
+  --color-success-400: var(--ypng-color-success-400);
+  --color-success-500: var(--ypng-color-success-500);
+  --color-success-600: var(--ypng-color-success-600);
+  --color-success-700: var(--ypng-color-success-700);
+  --color-success-800: var(--ypng-color-success-800);
+  --color-success-900: var(--ypng-color-success-900);
+  --color-success-950: var(--ypng-color-success-950);
+  --color-success: var(--ypng-color-success-500);
+
+  --color-warning-50: var(--ypng-color-warning-50);
+  --color-warning-100: var(--ypng-color-warning-100);
+  --color-warning-200: var(--ypng-color-warning-200);
+  --color-warning-300: var(--ypng-color-warning-300);
+  --color-warning-400: var(--ypng-color-warning-400);
+  --color-warning-500: var(--ypng-color-warning-500);
+  --color-warning-600: var(--ypng-color-warning-600);
+  --color-warning-700: var(--ypng-color-warning-700);
+  --color-warning-800: var(--ypng-color-warning-800);
+  --color-warning-900: var(--ypng-color-warning-900);
+  --color-warning-950: var(--ypng-color-warning-950);
+  --color-warning: var(--ypng-color-warning-500);
+
+  --color-error-50: var(--ypng-color-error-50);
+  --color-error-100: var(--ypng-color-error-100);
+  --color-error-200: var(--ypng-color-error-200);
+  --color-error-300: var(--ypng-color-error-300);
+  --color-error-400: var(--ypng-color-error-400);
+  --color-error-500: var(--ypng-color-error-500);
+  --color-error-600: var(--ypng-color-error-600);
+  --color-error-700: var(--ypng-color-error-700);
+  --color-error-800: var(--ypng-color-error-800);
+  --color-error-900: var(--ypng-color-error-900);
+  --color-error-950: var(--ypng-color-error-950);
+  --color-error: var(--ypng-color-error-500);
+
+  --color-info-50: var(--ypng-color-info-50);
+  --color-info-100: var(--ypng-color-info-100);
+  --color-info-200: var(--ypng-color-info-200);
+  --color-info-300: var(--ypng-color-info-300);
+  --color-info-400: var(--ypng-color-info-400);
+  --color-info-500: var(--ypng-color-info-500);
+  --color-info-600: var(--ypng-color-info-600);
+  --color-info-700: var(--ypng-color-info-700);
+  --color-info-800: var(--ypng-color-info-800);
+  --color-info-900: var(--ypng-color-info-900);
+  --color-info-950: var(--ypng-color-info-950);
+  --color-info: var(--ypng-color-info-500);
+
+  --color-neutral-50: var(--ypng-color-neutral-50);
+  --color-neutral-100: var(--ypng-color-neutral-100);
+  --color-neutral-200: var(--ypng-color-neutral-200);
+  --color-neutral-300: var(--ypng-color-neutral-300);
+  --color-neutral-400: var(--ypng-color-neutral-400);
+  --color-neutral-500: var(--ypng-color-neutral-500);
+  --color-neutral-600: var(--ypng-color-neutral-600);
+  --color-neutral-700: var(--ypng-color-neutral-700);
+  --color-neutral-800: var(--ypng-color-neutral-800);
+  --color-neutral-900: var(--ypng-color-neutral-900);
+  --color-neutral-950: var(--ypng-color-neutral-950);
+  --color-neutral: var(--ypng-color-neutral-500);
+
+  --color-btn-light: var(--ypng-color-btn-text-light);
+  --color-btn-dark: var(--ypng-color-btn-text-dark);
+
+  --font-header: var(--ypng-font-family-header);
+  --font-body: var(--ypng-font-family-body);
+  --font-mono: var(--ypng-font-family-body-mono);
+
+  --font-size-xs: var(--ypng-font-size-xs);
+  --font-size-sm: var(--ypng-font-size-sm);
+  --font-size-base: var(--ypng-font-size-base);
+  --font-size-lg: var(--ypng-font-size-lg);
+  --font-size-xl: var(--ypng-font-size-xl);
+  --font-size-2xl: var(--ypng-font-size-2xl);
+  --font-size-3xl: var(--ypng-font-size-3xl);
+  --font-size-4xl: var(--ypng-font-size-4xl);
+  --font-size-5xl: var(--ypng-font-size-5xl);
+
+  --spacing-px: var(--ypng-spacing-px);
+  --spacing-0: var(--ypng-spacing-0);
+  --spacing-0-5: var(--ypng-spacing-0-5);
+  --spacing-1: var(--ypng-spacing-1);
+  --spacing-2: var(--ypng-spacing-2);
+  --spacing-3: var(--ypng-spacing-3);
+  --spacing-4: var(--ypng-spacing-4);
+  --spacing-5: var(--ypng-spacing-5);
+  --spacing-6: var(--ypng-spacing-6);
+  --spacing-8: var(--ypng-spacing-8);
+  --spacing-10: var(--ypng-spacing-10);
+  --spacing-12: var(--ypng-spacing-12);
+  --spacing-16: var(--ypng-spacing-16);
+  --spacing-20: var(--ypng-spacing-20);
+  --spacing-24: var(--ypng-spacing-24);
+
+  --radius-none: var(--ypng-radius-none);
+  --radius-sm: var(--ypng-radius-sm);
+  --radius-default: var(--ypng-radius-default);
+  --radius-md: var(--ypng-radius-md);
+  --radius-lg: var(--ypng-radius-lg);
+  --radius-xl: var(--ypng-radius-xl);
+  --radius-2xl: var(--ypng-radius-2xl);
+  --radius-3xl: var(--ypng-radius-3xl);
+  --radius-full: var(--ypng-radius-full);
+
+  --shadow-xs: var(--ypng-shadow-xs);
+  --shadow-sm: var(--ypng-shadow-sm);
+  --shadow-md: var(--ypng-shadow-md);
+  --shadow-lg: var(--ypng-shadow-lg);
+  --shadow-xl: var(--ypng-shadow-xl);
+  --shadow-2xl: var(--ypng-shadow-2xl);
+  --shadow-inner: var(--ypng-shadow-inner);
+  --shadow-card: var(--ypng-shadow-card);
+  --shadow-card-hover: var(--ypng-shadow-card-hover);
+
+  --animate-spin: spin 1s linear infinite;
+  --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-bounce: bounce 1s infinite;
   --animate-fade-in: fade-in 0.5s ease-in-out;
   --animate-slide-up: slide-up 0.5s ease-out;
   --animate-slide-down: slide-down 0.5s ease-out;
+  --animate-scale-in: scale-in 0.2s ease-out;
+  --animate-scale-out: scale-out 0.2s ease-in;
 
-  /* Custom timing functions */
-  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --duration-75: var(--ypng-duration-75);
+  --duration-100: var(--ypng-duration-100);
+  --duration-150: var(--ypng-duration-150);
+  --duration-200: var(--ypng-duration-200);
+  --duration-300: var(--ypng-duration-300);
+  --duration-500: var(--ypng-duration-500);
+  --duration-700: var(--ypng-duration-700);
+  --duration-1000: var(--ypng-duration-1000);
 
-  /* Custom shadows */
-  --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-card-hover: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --ease-linear: var(--ypng-ease-linear);
+  --ease-in: var(--ypng-ease-in);
+  --ease-out: var(--ypng-ease-out);
+  --ease-in-out: var(--ypng-ease-in-out);
+  --ease-spring: var(--ypng-ease-spring);
+  --ease-bounce: var(--ypng-ease-bounce);
+
+  --blur-none: var(--ypng-blur-none);
+  --blur-sm: var(--ypng-blur-sm);
+  --blur-default: var(--ypng-blur-default);
+  --blur-md: var(--ypng-blur-md);
+  --blur-lg: var(--ypng-blur-lg);
+  --blur-xl: var(--ypng-blur-xl);
+  --blur-2xl: var(--ypng-blur-2xl);
+  --blur-3xl: var(--ypng-blur-3xl);
+
+  --width-xs: var(--ypng-container-xs);
+  --width-sm: var(--ypng-container-sm);
+  --width-md: var(--ypng-container-md);
+  --width-lg: var(--ypng-container-lg);
+  --width-xl: var(--ypng-container-xl);
 }
 
+/* ========================================
+  Base Styles
+======================================== */
 @layer base {
+  * {
+    @apply border-neutral-200;
+  }
+
   body {
-    @apply font-quicksand font-medium;
+    @apply font-body font-medium text-neutral-900 bg-neutral-50;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-header tracking-wider;
+  }
+
+  h1 {
+    @apply text-4xl;
+  }
+  h2 {
+    @apply text-3xl;
+  }
+  h3 {
+    @apply text-2xl;
+  }
+  h4 {
+    @apply text-xl;
+  }
+  h5 {
+    @apply text-lg;
+  }
+  h6 {
+    @apply text-base;
   }
 
   button {
     @apply cursor-pointer;
   }
+
+  /* Focus styles */
+  [type='text']:focus,
+  [type='email']:focus,
+  [type='url']:focus,
+  [type='password']:focus,
+  [type='number']:focus,
+  [type='date']:focus,
+  [type='datetime-local']:focus,
+  [type='month']:focus,
+  [type='search']:focus,
+  [type='tel']:focus,
+  [type='time']:focus,
+  [type='week']:focus,
+  [multiple]:focus,
+  textarea:focus,
+  select:focus {
+    @apply ring-2 ring-primary-500 ring-offset-2 border-primary-500;
+  }
 }
 
-/* Custom animations */
+/* ========================================
+  Custom Animations
+======================================== */
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -104,21 +619,166 @@
   }
 }
 
-/* Custom utility classes for Tailwind CSS 4.0 */
+@keyframes scale-in {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-out {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+/* ========================================
+  Utility Classes
+======================================== */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
   .animate-fade-in {
-    animation: fade-in 0.5s ease-in-out;
+    animation: var(--animate-fade-in);
   }
 
   .animate-slide-up {
-    animation: slide-up 0.5s ease-out;
+    animation: var(--animate-slide-up);
   }
 
   .animate-slide-down {
-    animation: slide-down 0.5s ease-out;
+    animation: var(--animate-slide-down);
   }
+
+  .animate-scale-in {
+    animation: var(--animate-scale-in);
+  }
+
+  .animate-scale-out {
+    animation: var(--animate-scale-out);
+  }
+
+  .gradient-primary {
+    @apply bg-gradient-to-r from-primary-400 to-primary-600;
+  }
+
+  .gradient-secondary {
+    @apply bg-gradient-to-r from-secondary-400 to-secondary-600;
+  }
+
+  .gradient-accent {
+    @apply bg-gradient-to-r from-accent-400 to-accent-600;
+  }
+
+  .gradient-success {
+    @apply bg-gradient-to-r from-success-400 to-success-600;
+  }
+
+  .gradient-warning {
+    @apply bg-gradient-to-r from-warning-400 to-warning-600;
+  }
+
+  .gradient-error {
+    @apply bg-gradient-to-r from-error-400 to-error-600;
+  }
+
+  .glass {
+    @apply bg-neutral-50/80 backdrop-blur-md;
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-neutral-100 rounded-full;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-neutral-400 rounded-full;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-neutral-500;
+  }
+
+  /* .dark .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-neutral-800;
+  }
+
+  .dark .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-neutral-600;
+  }
+
+  .dark .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-neutral-500;
+  } */
+}
+
+/* ========================================
+   Component-specific styles
+   ======================================== */
+@layer components {
+  .card {
+    @apply bg-neutral-50 rounded-lg shadow-card p-6 transition-shadow hover:shadow-card-hover;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-lg font-medium transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+  }
+  /*
+  .input {
+    @apply w-full px-3 py-2 bg-neutral-50 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors;
+  } */
 }

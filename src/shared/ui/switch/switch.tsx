@@ -11,11 +11,11 @@ const switchVariants = cva(
   {
     variants: {
       variant: {
-        default: 'bg-gray-200 data-[state=checked]:bg-primary-500 focus-visible:ring-primary-500',
-        secondary: 'bg-gray-200 data-[state=checked]:bg-secondary-500 focus-visible:ring-secondary-500',
-        success: 'bg-gray-200 data-[state=checked]:bg-green-500 focus-visible:ring-green-500',
-        warning: 'bg-gray-200 data-[state=checked]:bg-yellow-500 focus-visible:ring-yellow-500',
-        danger: 'bg-gray-200 data-[state=checked]:bg-red-500 focus-visible:ring-red-500',
+        default: 'bg-neutral-200 data-[state=checked]:bg-primary-500 focus-visible:ring-primary-500',
+        secondary: 'bg-neutral-200 data-[state=checked]:bg-secondary-500 focus-visible:ring-secondary-500',
+        success: 'bg-neutral-200 data-[state=checked]:bg-green-500 focus-visible:ring-green-500',
+        warning: 'bg-neutral-200 data-[state=checked]:bg-yellow-500 focus-visible:ring-yellow-500',
+        danger: 'bg-neutral-200 data-[state=checked]:bg-error-500 focus-visible:ring-error-500',
       },
       size: {
         sm: 'h-5 w-9',
@@ -30,21 +30,18 @@ const switchVariants = cva(
   }
 );
 
-const switchThumbVariants = cva(
-  'pointer-events-none block rounded-full bg-white shadow-lg ring-0',
-  {
-    variants: {
-      size: {
-        sm: 'h-4 w-4',
-        md: 'h-5 w-5',
-        lg: 'h-6 w-6',
-      },
+const switchThumbVariants = cva('pointer-events-none block rounded-full bg-neutral-50 shadow-lg ring-0', {
+  variants: {
+    size: {
+      sm: 'h-4 w-4',
+      md: 'h-5 w-5',
+      lg: 'h-6 w-6',
     },
-    defaultVariants: {
-      size: 'md',
-    },
-  }
-);
+  },
+  defaultVariants: {
+    size: 'md',
+  },
+});
 
 const getThumbTranslateX = (size: 'sm' | 'md' | 'lg' | null | undefined, checked: boolean) => {
   const translateValues = {
@@ -55,8 +52,7 @@ const getThumbTranslateX = (size: 'sm' | 'md' | 'lg' | null | undefined, checked
   return translateValues[size || 'md'];
 };
 
-export type SwitchProps = ComponentPropsWithoutRef<typeof SwitchPrimitive.Root> &
-  VariantProps<typeof switchVariants>;
+export type SwitchProps = ComponentPropsWithoutRef<typeof SwitchPrimitive.Root> & VariantProps<typeof switchVariants>;
 
 export const Switch = forwardRef<ComponentRef<typeof SwitchPrimitive.Root>, SwitchProps>(
   ({ className, variant, size, ...props }, ref) => (

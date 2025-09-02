@@ -23,9 +23,9 @@ const radioGroupItemVariants = cva(
   {
     variants: {
       variant: {
-        default: 'border-gray-300 data-[state=checked]:border-primary-500 focus-visible:ring-primary-500',
-        secondary: 'border-gray-300 data-[state=checked]:border-secondary-500 focus-visible:ring-secondary-500',
-        destructive: 'border-gray-300 data-[state=checked]:border-red-500 focus-visible:ring-red-500',
+        default: 'border-neutral-300 data-[state=checked]:border-primary-500 focus-visible:ring-primary-500',
+        secondary: 'border-neutral-300 data-[state=checked]:border-secondary-500 focus-visible:ring-secondary-500',
+        destructive: 'border-neutral-300 data-[state=checked]:border-error-500 focus-visible:ring-error-500',
       },
     },
     defaultVariants: {
