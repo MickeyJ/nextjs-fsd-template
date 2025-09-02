@@ -67,7 +67,7 @@ DropdownMenuSubContent.displayName = DropdownMenuPrimitive.SubContent.displayNam
 const DropdownMenuContent = forwardRef<
   ComponentRef<typeof DropdownMenuPrimitive.Content>,
   ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Content> & VariantProps<typeof menuContentVariants>
->(({ className, sideOffset = 4, position, ...props }, ref) => (
+>(({ className, sideOffset = 4, position, children }, ref) => (
   <DropdownMenuPrimitive.Portal>
     <DropdownMenuPrimitive.Content asChild sideOffset={sideOffset}>
       <motion.div
@@ -75,8 +75,9 @@ const DropdownMenuContent = forwardRef<
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         className={cn(menuContentVariants({ position }), className)}
-        {...props}
-      />
+      >
+        {children}
+      </motion.div>
     </DropdownMenuPrimitive.Content>
   </DropdownMenuPrimitive.Portal>
 ));

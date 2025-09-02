@@ -1,5 +1,5 @@
 // Public API for membership-types entity
-export { default as Event } from './model/collection';
+export { default as EventRegistration } from './model/collection';
 
 // You can add UI components and API functions here as needed
 // export { MembershipTypeCard } from './ui/MembershipTypeCard';

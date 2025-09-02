@@ -14,7 +14,7 @@ const DialogClose = DialogPrimitive.Close;
 const DialogOverlay = forwardRef<
   ComponentRef<typeof DialogPrimitive.Overlay>,
   ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
->(({ className, ...props }, ref) => (
+>(({ className }, ref) => (
   <DialogPrimitive.Overlay asChild forceMount>
     <motion.div
       ref={ref}
@@ -23,7 +23,6 @@ const DialogOverlay = forwardRef<
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
-      {...props}
     />
   </DialogPrimitive.Overlay>
 ));
@@ -46,7 +45,6 @@ const DialogContent = forwardRef<
         animate={{ opacity: 1, scale: 1, x: '-50%', y: '-50%' }}
         exit={{ opacity: 0, scale: 0.95, x: '-50%', y: '-50%' }}
         transition={{ type: 'spring', duration: 0.3 }}
-        {...props}
       >
         {children}
         <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-white transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-gray-950 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-gray-100 data-[state=open]:text-gray-500">

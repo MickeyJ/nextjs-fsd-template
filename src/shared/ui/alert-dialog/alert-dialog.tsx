@@ -12,7 +12,7 @@ const AlertDialogPortal = AlertDialogPrimitive.Portal;
 const AlertDialogOverlay = forwardRef<
   ComponentRef<typeof AlertDialogPrimitive.Overlay>,
   ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Overlay>
->(({ className, ...props }, ref) => (
+>(({ className }, ref) => (
   <AlertDialogPrimitive.Overlay asChild forceMount>
     <motion.div
       ref={ref}
@@ -20,7 +20,6 @@ const AlertDialogOverlay = forwardRef<
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      {...props}
     />
   </AlertDialogPrimitive.Overlay>
 ));
@@ -29,7 +28,7 @@ AlertDialogOverlay.displayName = AlertDialogPrimitive.Overlay.displayName;
 const AlertDialogContent = forwardRef<
   ComponentRef<typeof AlertDialogPrimitive.Content>,
   ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Content>
->(({ className, ...props }, ref) => (
+>(({ className, children }, ref) => (
   <AlertDialogPortal forceMount>
     <AlertDialogOverlay />
     <AlertDialogPrimitive.Content asChild forceMount>
@@ -42,8 +41,9 @@ const AlertDialogContent = forwardRef<
         initial={{ opacity: 0, scale: 0.95, x: '-50%', y: '-50%' }}
         animate={{ opacity: 1, scale: 1, x: '-50%', y: '-50%' }}
         exit={{ opacity: 0, scale: 0.95, x: '-50%', y: '-50%' }}
-        {...props}
-      />
+      >
+        {children}
+      </motion.div>
     </AlertDialogPrimitive.Content>
   </AlertDialogPortal>
 ));
@@ -104,3 +104,11 @@ export {
   AlertDialogAction,
   AlertDialogCancel,
 };
+
+export type AlertDialogProps = ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Root>;
+export type AlertDialogTriggerProps = ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Trigger>;
+export type AlertDialogContentProps = ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Content>;
+export type AlertDialogTitleProps = ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Title>;
+export type AlertDialogDescriptionProps = ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Description>;
+export type AlertDialogActionProps = ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Action>;
+export type AlertDialogCancelProps = ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Cancel>;

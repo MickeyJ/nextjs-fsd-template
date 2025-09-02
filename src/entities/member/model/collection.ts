@@ -1,7 +1,7 @@
 // collections/Members.ts
 import type { CollectionConfig } from 'payload';
 
-export const Members: CollectionConfig = {
+const Members: CollectionConfig = {
   slug: 'members',
   auth: true, // Enable authentication
   admin: {
@@ -35,3 +35,5 @@ export const Members: CollectionConfig = {
     },
   ],
 };
+
+export default Members;

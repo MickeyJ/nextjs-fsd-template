@@ -1,7 +1,15 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm run lint:*)"
+      "Bash(npm run lint:*)",
+      "Bash(for:*)",
+      "Bash(do if [ -f \"$dir/index.ts\" ])",
+      "Bash(fi)",
+      "Bash(done)",
+      "Bash(do if [ ! -f \"$dir/index.ts\" ])",
+      "Bash(then echo \"Need index.ts: $dir\")",
+      "Bash(npm run typecheck:*)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []

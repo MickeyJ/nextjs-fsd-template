@@ -119,3 +119,12 @@ export {
   NavigationMenuIndicator,
   NavigationMenuViewport,
 };
+
+export type NavigationMenuProps = ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Root>;
+export type NavigationMenuListProps = ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.List>;
+export type NavigationMenuItemProps = ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Item>;
+export type NavigationMenuContentProps = ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Content>;
+export type NavigationMenuTriggerProps = ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Trigger>;
+export type NavigationMenuLinkProps = ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Link>;
+export type NavigationMenuIndicatorProps = ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Indicator>;
+export type NavigationMenuViewportProps = ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Viewport>;

@@ -12,7 +12,7 @@ const HoverCardPortal = HoverCardPrimitive.Portal;
 const HoverCardContent = forwardRef<
   ComponentRef<typeof HoverCardPrimitive.Content>,
   ComponentPropsWithoutRef<typeof HoverCardPrimitive.Content>
->(({ className, align = 'center', sideOffset = 4, ...props }, ref) => (
+>(({ className, align = 'center', sideOffset = 4, children }, ref) => (
   <HoverCardPrimitive.Content asChild sideOffset={sideOffset} align={align}>
     <motion.div
       ref={ref}
@@ -24,8 +24,9 @@ const HoverCardContent = forwardRef<
         'z-50 w-64 rounded-md border border-gray-200 bg-white p-4 text-gray-900 shadow-md outline-none',
         className
       )}
-      {...props}
-    />
+    >
+      {children}
+    </motion.div>
   </HoverCardPrimitive.Content>
 ));
 HoverCardContent.displayName = HoverCardPrimitive.Content.displayName;

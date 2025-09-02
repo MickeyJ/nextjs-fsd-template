@@ -6,12 +6,16 @@ import sharp from 'sharp';
 
 import Media from './src/entities/media/model/collection';
 import Event from './src/entities/event/model/collection';
-// Collections from FSD entities layer
+import EventRegistration from './src/entities/event-registrations/model/collection';
+import Member from './src/entities/member/model/collection';
+import MembershipType from './src/entities/membership-type/model/collection';
 import User from './src/entities/user/model/collection';
 
 export default buildConfig({
-  admin: { user: 'users' },
-  collections: [User, Event, Media],
+  admin: {
+    user: 'users',
+  },
+  collections: [User, Event, EventRegistration, Media, Member, MembershipType],
   editor: lexicalEditor({}),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

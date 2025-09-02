@@ -52,7 +52,7 @@ ContextMenuSubContent.displayName = ContextMenuPrimitive.SubContent.displayName;
 const ContextMenuContent = forwardRef<
   ComponentRef<typeof ContextMenuPrimitive.Content>,
   ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Content>
->(({ className, ...props }, ref) => (
+>(({ className, children }, ref) => (
   <ContextMenuPrimitive.Portal>
     <ContextMenuPrimitive.Content asChild>
       <motion.div
@@ -63,8 +63,9 @@ const ContextMenuContent = forwardRef<
           'z-50 min-w-[8rem] overflow-hidden rounded-md border border-gray-200 bg-white p-1 text-gray-900 shadow-md',
           className
         )}
-        {...props}
-      />
+      >
+        {children}
+      </motion.div>
     </ContextMenuPrimitive.Content>
   </ContextMenuPrimitive.Portal>
 ));
