@@ -9,44 +9,54 @@ export const COMPANY = {
   tagline: 'Surround Yourself with People Who Inspire You',
   description:
     'Young Professionals Networking Group is a group of young professionals who are looking to network and grow their careers.',
-  phone: '(555) 123-4567', // Update with actual
+  phone: '(805) 710-6302', // TODO: Get Google Voice number
   email: 'info@ypng.com',
   website: 'https://ypng.org',
   address: {
-    street: '123 Main Street', // Update with actual
+    street: 'PO Box 13643',
     city: 'San Luis Obispo',
     state: 'CA',
-    zip: '93405',
+    zip: '93406',
   },
 } as const;
 
 export const NAVIGATION = {
   main: [
     { label: 'Home', href: '/' },
+    {
+      label: 'About Us',
+      sub_links: [
+        { label: 'About YPNG', href: '/about' },
+        { label: 'Meet The Board', href: '/board' },
+      ],
+    },
+    { label: 'Become a Member', href: '/membership' },
     { label: 'Events', href: '/events' },
-    { label: 'About', href: '/about' },
-    { label: 'Meet The Board', href: '/board' },
+    { label: 'Volunteer', href: '/volunteer' },
+    { label: 'Softball', href: '/softball' },
     { label: 'Member Directory', href: '/members' },
+    { label: 'Community Board', href: '/community-board' },
     { label: 'Contact', href: '/contact' },
   ],
   footer: {
-    services: [
-      { label: 'Events', href: '/events' },
-      { label: 'Board Members', href: '/board' },
-      { label: 'Member Directory', href: '/members' },
-      { label: 'Contact', href: '/contact' },
+    social: [
+      { label: 'Facebook', href: 'https://www.facebook.com/YPNGSLO' },
+      { label: 'Instagram', href: 'https://www.instagram.com/youngprofessionalsslo/' },
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/company/276027/admin/' },
+      { label: 'Meetup', href: 'https://www.meetup.com/san-luis-obispo-sociale-meetup-group/' },
+      { label: 'Eventbrite', href: 'https://www.eventbrite.com/o/young-professionals-networking-group-110970285251' },
     ],
     company: [
       { label: 'About Us', href: '/about' },
-      { label: 'Meet The Board', href: '/board' },
-      { label: 'Member Directory', href: '/members' },
+      { label: 'The Board', href: '/board' },
+      { label: 'Members', href: '/members' },
       { label: 'Contact', href: '/contact' },
     ],
-    resources: [
-      { label: 'Case Studies', href: '/resources/case-studies' },
-      { label: 'News', href: '/resources/news' },
-      { label: 'RFP Portal', href: '/rfp' },
-      { label: 'Federal Guides', href: '/resources/guides' },
+    partners: [
+      { label: 'SLO Chamber of Commerce', href: '/partners/slo-chamber' },
+      { label: 'SBDC', href: '/partners/sbdc' },
+      { label: '20s & 30s', href: '/partners/20s-30s' },
+      { label: 'Surfrider Foundation', href: '/partners/surfrider-foundation' },
     ],
   },
 } as const;
