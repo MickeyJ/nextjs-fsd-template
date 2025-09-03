@@ -11,8 +11,8 @@ const progressVariants = cva('relative h-4 w-full overflow-hidden rounded-full b
     variant: {
       default: '[&>div]:bg-primary-500',
       secondary: '[&>div]:bg-secondary-500',
-      success: '[&>div]:bg-green-500',
-      warning: '[&>div]:bg-yellow-500',
+      success: '[&>div]:bg-success-500',
+      warning: '[&>div]:bg-warning-500',
       danger: '[&>div]:bg-error-500',
     },
     size: {

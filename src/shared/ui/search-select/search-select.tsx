@@ -263,7 +263,7 @@ const SearchSelect = React.forwardRef<HTMLDivElement, SearchSelectProps>(
       return (
         <div
           ref={dropdownRef}
-          className="absolute top-full left-0 right-0 mt-1 z-50 overflow-hidden rounded-md border border-neutral-200 bg-neutral-50 text-neutral-950 shadow-md"
+          className="absolute top-full left-0 right-0 mt-1 z-50 overflow-hidden rounded-md border border-neutral-200 bg-neutral-50 text-neutral-950shadow-md"
         >
           {showSearchInput && (
             <div className="border-b p-2">

@@ -79,11 +79,7 @@ export const TimePickerInput = forwardRef<HTMLButtonElement, TimePickerInputProp
           <Button
             variant="outline"
             ref={ref}
-            className={cn(
-              'w-full justify-start text-left font-normal',
-              !value && 'text-neutral-500',
-              className
-            )}
+            className={cn('w-full justify-start text-left font-normal', !value && 'text-neutral-500', className)}
             disabled={disabled}
           >
             <Clock className="mr-2 h-4 w-4" />

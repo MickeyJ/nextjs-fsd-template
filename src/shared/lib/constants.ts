@@ -27,7 +27,7 @@ export const NAVIGATION = {
       label: 'About Us',
       sub_links: [
         { label: 'About YPNG', href: '/about' },
-        { label: 'Meet The Board', href: '/board' },
+        { label: 'Meet The Board', href: '/board-members' },
       ],
     },
     { label: 'Become a Member', href: '/membership' },
@@ -48,7 +48,7 @@ export const NAVIGATION = {
     ],
     company: [
       { label: 'About Us', href: '/about' },
-      { label: 'The Board', href: '/board' },
+      { label: 'The Board', href: '/board-members' },
       { label: 'Members', href: '/members' },
       { label: 'Contact', href: '/contact' },
     ],
@@ -60,6 +60,16 @@ export const NAVIGATION = {
     ],
   },
 } as const;
+
+export type NavItem = (typeof NAVIGATION.main)[number];
+export type NavLink = Extract<NavItem, { href: string }>;
+export type NavItemWithSubLinks = Extract<NavItem, { sub_links: any }>;
+export type NavigationConfig = typeof NAVIGATION;
+
+// Type guard to check if a nav item has sub_links
+export function hasSubLinks(item: NavItem): item is NavItemWithSubLinks {
+  return 'sub_links' in item;
+}
 
 export const CERTIFICATIONS = ['Non-Profit Organization', '501(c)(3) Organization'] as const;
 

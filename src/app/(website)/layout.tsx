@@ -1,12 +1,11 @@
 import '../globals.css';
 
 import type { Metadata } from 'next';
-import { Solway, Noto_Sans_Mono, Noto_Sans, Roboto_Condensed, Roboto_Flex, Roboto_Mono } from 'next/font/google';
+import { Roboto_Condensed, Roboto_Flex, Roboto_Mono } from 'next/font/google';
 
 import { COMPANY } from '@/shared/lib/constants';
-// import { Footer } from '@/widgets/footer/ui/footer';
-import Header from '@/widgets/header/ui/header';
-import { getPreferredTheme } from '@/shared/lib/utils';
+
+import { WebsiteHeader, WebsiteFooter } from '@/widgets';
 
 const headerFont = Roboto_Condensed({
   variable: '--ypng-font-family-header',
@@ -83,9 +82,9 @@ export default function WebsiteLayout({ children }: { children: React.ReactNode 
   return (
     <html lang="en">
       <body className={`${bodyFont.variable} ${bodyFontMono.variable} ${headerFont.variable} antialiased`}>
-        <Header />
+        <WebsiteHeader />
         <main>{children}</main>
-        {/* <Footer /> */}
+        <WebsiteFooter />
       </body>
     </html>
   );

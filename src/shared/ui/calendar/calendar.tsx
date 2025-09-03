@@ -42,7 +42,7 @@ const Calendar = forwardRef<HTMLDivElement, CalendarProps>(({ className, showOut
           today: 'bg-neutral-100 text-neutral-900',
           outside: cn(
             'text-neutral-500 opacity-50 ',
-            'aria-selected:bg-neutral-100/50 aria-selected:text-neutral-500 aria-selected:opacity-30'
+            'aria-selected:bg-neutral-100/50 aria-selected:text-neutral-500aria-selected:opacity-30'
           ),
           disabled: 'text-neutral-500 opacity-50 ',
           range_middle: cn('aria-selected:bg-neutral-100 aria-selected:text-neutral-900'),

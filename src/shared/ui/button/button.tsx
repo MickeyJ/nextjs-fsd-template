@@ -21,7 +21,7 @@ export const buttonVariants = cva(
         neutral:
           'bg-neutral-500 text-btn-light hover:bg-neutral-600 active:bg-neutral-700 focus-visible:ring-neutral-500',
         outline:
-          'border-neutral-300 bg-transparent hover:bg-neutral-50 active:bg-neutral-100 focus-visible:ring-neutral-500',
+          'border-neutral-800bg-transparent hover:bg-neutral-8/20 active:bg-neutral-100 focus-visible:ring-neutral-500',
         accent:
           'border-accent-500 text-accent-500 bg-transparent hover:bg-accent-100 active:bg-accent-100 focus-visible:ring-accent-500',
         ghost:

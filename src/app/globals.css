@@ -585,6 +585,22 @@
   }
 }
 
+a {
+  color: inherit;
+}
+
+@utility primary-gradient-to-br {
+  @apply bg-gradient-to-br from-primary-200 via-primary-400 to-primary-100;
+}
+
+@utility primary-gradient-to-br-invert {
+  @apply bg-gradient-to-br from-primary-300 via-primary-100 to-primary-300;
+}
+
+@utility secondary-gradient-to-br {
+  @apply bg-gradient-to-br from-secondary-300/30 via-secondary-400 to-secondary-100;
+}
+
 /* ========================================
   Custom Animations
 ======================================== */

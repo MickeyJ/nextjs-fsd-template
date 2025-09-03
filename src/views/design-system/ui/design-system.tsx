@@ -164,7 +164,7 @@ export default function DesignSystem() {
 
   return (
     <TooltipProvider>
-      <div className="min-h-screen bg-neutral-50 text-neutral-900 transition-colors">
+      <div className="min-h-screen bg-neutral-0 text-neutral-900 transition-colors">
         <Toaster />
 
         <main className="container mx-auto px-6 py-12 space-y-16">
@@ -182,12 +182,12 @@ export default function DesignSystem() {
                         className="text-center"
                       >
                         <div
-                          className={`h-16 rounded-lg bg-${color.base}-${shade} mb-2 ring-1 ring-neutral-200`}
+                          className={`h-16 rounded-lg bg-${color.base}-${shade} mb-2 ring-1 ring-neutral-2`}
                           style={{
                             backgroundColor: `var(--ypng-color-${color.base}-${shade})`,
                           }}
                         />
-                        <span className="text-xs text-neutral-600">{shade}</span>
+                        <span className="text-xs text-neutral-6">{shade}</span>
                       </div>
                     ))}
                   </div>
@@ -203,37 +203,37 @@ export default function DesignSystem() {
               <CardContent className="pt-6 space-y-4">
                 <div>
                   <h1 className="text-5xl font-bebas-neue">Heading 1 - header font</h1>
-                  <p className="text-neutral-600">text-5xl font-bebas-neue</p>
+                  <p className="text-neutral-6">text-5xl font-bebas-neue</p>
                 </div>
                 <Separator />
                 <div>
                   <h2 className="text-4xl font-bebas-neue">Heading 2 - header font</h2>
-                  <p className="text-neutral-600">text-4xl font-bebas-neue</p>
+                  <p className="text-neutral-6">text-4xl font-bebas-neue</p>
                 </div>
                 <Separator />
                 <div>
                   <h3 className="text-3xl font-bebas-neue">Heading 3 - header font</h3>
-                  <p className="text-neutral-600">text-3xl font-bebas-neue</p>
+                  <p className="text-neutral-6">text-3xl font-bebas-neue</p>
                 </div>
                 <Separator />
                 <div>
                   <p className="text-lg font-quicksand">Body Text Large - body font</p>
-                  <p className="text-neutral-600">text-lg font-quicksand</p>
+                  <p className="text-neutral-6">text-lg font-quicksand</p>
                 </div>
                 <Separator />
                 <div>
                   <p className="text-base font-quicksand">Body Text Base - body font</p>
-                  <p className="text-neutral-600">text-base font-quicksand</p>
+                  <p className="text-neutral-6">text-base font-quicksand</p>
                 </div>
                 <Separator />
                 <div>
                   <p className="text-sm font-quicksand">Body Text Small - body font</p>
-                  <p className="text-neutral-600">text-sm font-quicksand</p>
+                  <p className="text-neutral-6">text-sm font-quicksand</p>
                 </div>
                 <Separator />
                 <div>
                   <code className="font-mono bg-neutral-100 px-2 py-1 rounded">Monospace Code Font</code>
-                  <p className="font-mono text-neutral-600 mt-2">font-mono</p>
+                  <p className="font-mono text-neutral-600mt-2">font-mono</p>
                 </div>
               </CardContent>
             </Card>
@@ -527,18 +527,18 @@ export default function DesignSystem() {
                     <AlertTitle>Default Alert</AlertTitle>
                     <AlertDescription>This is a default alert with an informational message.</AlertDescription>
                   </Alert>
-                  <Alert className="border-success-500 bg-success-50">
-                    <CheckCircle className="h-4 w-4 text-success-600" />
+                  <Alert className="border-success-5 bg-success-0">
+                    <CheckCircle className="h-4 w-4 text-success-6" />
                     <AlertTitle>Success!</AlertTitle>
                     <AlertDescription>Your operation completed successfully.</AlertDescription>
                   </Alert>
-                  <Alert className="border-warning-500 bg-warning-50">
-                    <AlertTriangle className="h-4 w-4 text-warning-600" />
+                  <Alert className="border-warning-5 bg-warning-0">
+                    <AlertTriangle className="h-4 w-4 text-warning-6" />
                     <AlertTitle>Warning</AlertTitle>
                     <AlertDescription>Please review this important information.</AlertDescription>
                   </Alert>
-                  <Alert className="border-error-500 bg-error-50">
-                    <XCircle className="h-4 w-4 text-error-600" />
+                  <Alert className="border-error-5 bg-error-0">
+                    <XCircle className="h-4 w-4 text-error-6" />
                     <AlertTitle>Error</AlertTitle>
                     <AlertDescription>Something went wrong. Please try again.</AlertDescription>
                   </Alert>
@@ -575,9 +575,9 @@ export default function DesignSystem() {
                   <div className="space-y-4">
                     <p className="text-sm font-medium">Loading States</p>
                     <div className="flex items-center gap-4">
-                      <Loader2 className="h-6 w-6 animate-spin text-primary-500" />
-                      <RefreshCw className="h-6 w-6 animate-spin text-secondary-500" />
-                      <div className="h-6 w-6 border-2 border-accent-500 border-t-transparent rounded-full animate-spin" />
+                      <Loader2 className="h-6 w-6 animate-spin text-primary-5" />
+                      <RefreshCw className="h-6 w-6 animate-spin text-secondary-5" />
+                      <div className="h-6 w-6 border-2 border-accent-5 border-t-transparent rounded-full animate-spin" />
                     </div>
                   </div>
                   <Separator />
@@ -602,9 +602,9 @@ export default function DesignSystem() {
                     <Badge variant="secondary">Secondary</Badge>
                     <Badge variant="destructive">Destructive</Badge>
                     <Badge variant="outline">Outline</Badge>
-                    <Badge className="bg-success-500 text-neutral-50">Success</Badge>
-                    <Badge className="bg-warning-500 text-neutral-50">Warning</Badge>
-                    <Badge className="bg-info-500 text-neutral-50">Info</Badge>
+                    <Badge className="bg-success-5 text-neutral-0">Success</Badge>
+                    <Badge className="bg-warning-5 text-neutral-0">Warning</Badge>
+                    <Badge className="bg-info-5 text-neutral-0">Info</Badge>
                   </div>
                 </CardContent>
               </Card>
@@ -633,7 +633,7 @@ export default function DesignSystem() {
                       value="account"
                       className="mt-4"
                     >
-                      <p className="text-sm text-neutral-600">
+                      <p className="text-sm text-neutral-6">
                         Make changes to your account here. Click save when you're done.
                       </p>
                     </TabsContent>
@@ -641,7 +641,7 @@ export default function DesignSystem() {
                       value="password"
                       className="mt-4"
                     >
-                      <p className="text-sm text-neutral-600">
+                      <p className="text-sm text-neutral-6">
                         Change your password here. After saving, you'll be logged out.
                       </p>
                     </TabsContent>
@@ -649,7 +649,7 @@ export default function DesignSystem() {
                       value="settings"
                       className="mt-4"
                     >
-                      <p className="text-sm text-neutral-600">Manage your application settings and preferences here.</p>
+                      <p className="text-sm text-neutral-6">Manage your application settings and preferences here.</p>
                     </TabsContent>
                   </Tabs>
                 </CardContent>
@@ -868,7 +868,7 @@ export default function DesignSystem() {
                       </AlertDialogHeader>
                       <AlertDialogFooter>
                         <AlertDialogCancel>Cancel</AlertDialogCancel>
-                        <AlertDialogAction className="bg-error-500 hover:bg-error-600">Delete</AlertDialogAction>
+                        <AlertDialogAction className="bg-error-5 hover:bg-error-6">Delete</AlertDialogAction>
                       </AlertDialogFooter>
                     </AlertDialogContent>
                   </AlertDialog>
@@ -888,7 +888,7 @@ export default function DesignSystem() {
                       <div className="grid gap-4">
                         <div className="space-y-2">
                           <h4 className="font-medium leading-none">Dimensions</h4>
-                          <p className="text-sm text-neutral-500">Set the dimensions for the layer.</p>
+                          <p className="text-sm text-neutral-5">Set the dimensions for the layer.</p>
                         </div>
                         <div className="grid gap-2">
                           <div className="grid grid-cols-3 items-center gap-4">
@@ -945,7 +945,7 @@ export default function DesignSystem() {
                         <span>Notifications</span>
                       </DropdownMenuItem>
                       <DropdownMenuSeparator />
-                      <DropdownMenuItem className="text-error-600">
+                      <DropdownMenuItem className="text-error-6">
                         <X className="mr-2 h-4 w-4" />
                         <span>Log out</span>
                       </DropdownMenuItem>
@@ -960,7 +960,7 @@ export default function DesignSystem() {
                 </CardHeader>
                 <CardContent>
                   <ContextMenu>
-                    <ContextMenuTrigger className="flex h-[150px] w-full items-center justify-center rounded-md border border-dashed border-neutral-300 text-sm">
+                    <ContextMenuTrigger className="flex h-[150px] w-full items-center justify-center rounded-md border border-dashed border-neutral-300text-sm">
                       Right click here
                     </ContextMenuTrigger>
                     <ContextMenuContent className="w-64">
@@ -976,7 +976,7 @@ export default function DesignSystem() {
                         <Share className="mr-2 h-4 w-4" />
                         Share
                       </ContextMenuItem>
-                      <ContextMenuItem className="text-error-600">
+                      <ContextMenuItem className="text-error-6">
                         <Trash className="mr-2 h-4 w-4" />
                         Delete
                       </ContextMenuItem>
@@ -1223,7 +1223,7 @@ export default function DesignSystem() {
                       {Array.from({ length: 10 }).map((_, i) => (
                         <div key={i}>
                           <h4 className="text-sm font-medium">Item {i + 1}</h4>
-                          <p className="text-sm text-neutral-500">
+                          <p className="text-sm text-neutral-5">
                             This is a scrollable item with some content that demonstrates the scroll area component.
                           </p>
                         </div>
@@ -1295,27 +1295,27 @@ export default function DesignSystem() {
               <CardContent className="pt-6">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   <motion.div
-                    className="p-4 bg-primary-100 rounded-lg text-center"
+                    className="p-4 bg-primary-100rounded-lg text-center"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     Scale
                   </motion.div>
                   <motion.div
-                    className="p-4 bg-secondary-100 rounded-lg text-center"
+                    className="p-4 bg-secondary-100rounded-lg text-center"
                     whileHover={{ rotate: 5 }}
                   >
                     Rotate
                   </motion.div>
                   <motion.div
-                    className="p-4 bg-accent-100 rounded-lg text-center"
+                    className="p-4 bg-accent-1 rounded-lg text-center"
                     animate={{ y: [0, -10, 0] }}
                     transition={{ repeat: Infinity, duration: 2 }}
                   >
                     Bounce
                   </motion.div>
                   <motion.div
-                    className="p-4 bg-success-100 rounded-lg text-center"
+                    className="p-4 bg-success-1 rounded-lg text-center"
                     animate={{ opacity: [1, 0.5, 1] }}
                     transition={{ repeat: Infinity, duration: 2 }}
                   >

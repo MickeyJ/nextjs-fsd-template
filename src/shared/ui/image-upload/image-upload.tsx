@@ -177,7 +177,7 @@ export const ImageUpload = forwardRef<HTMLDivElement, ImageUploadProps>(
                 )}
 
                 {file.progress !== undefined && file.progress < 100 && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-neutral-950/50">
+                  <div className="absolute inset-0 flex items-center justify-center bg-neutral-10/50">
                     <div className="w-3/4">
                       <Progress
                         value={file.progress}
@@ -196,7 +196,7 @@ export const ImageUpload = forwardRef<HTMLDivElement, ImageUploadProps>(
                 <button
                   type="button"
                   onClick={() => removeFile(index)}
-                  className="absolute right-1 top-1 rounded-full bg-neutral-950/50 p-1 opacity-0 transition-opacity group-hover:opacity-100"
+                  className="absolute right-1 top-1 rounded-full bg-neutral-10/50 p-1 opacity-0 transition-opacity group-hover:opacity-100"
                 >
                   <X className="h-3 w-3 text-neutral-50" />
                 </button>

@@ -13,9 +13,9 @@ const sliderVariants = cva('relative flex w-full touch-none select-none items-ce
       secondary:
         '[&_[data-radix-slider-track]]:bg-neutral-200 [&_[data-radix-slider-range]]:bg-secondary-500 [&_[data-radix-slider-thumb]]:border-secondary-500 [&_[data-radix-slider-thumb]:focus-visible]:ring-secondary-500',
       success:
-        '[&_[data-radix-slider-track]]:bg-neutral-200 [&_[data-radix-slider-range]]:bg-green-500 [&_[data-radix-slider-thumb]]:border-green-500 [&_[data-radix-slider-thumb]:focus-visible]:ring-green-500',
+        '[&_[data-radix-slider-track]]:bg-neutral-200 [&_[data-radix-slider-range]]:bg-success-500 [&_[data-radix-slider-thumb]]:border-success-500 [&_[data-radix-slider-thumb]:focus-visible]:ring-success-500',
       warning:
-        '[&_[data-radix-slider-track]]:bg-neutral-200 [&_[data-radix-slider-range]]:bg-yellow-500 [&_[data-radix-slider-thumb]]:border-yellow-500 [&_[data-radix-slider-thumb]:focus-visible]:ring-yellow-500',
+        '[&_[data-radix-slider-track]]:bg-neutral-200 [&_[data-radix-slider-range]]:bg-warning-500 [&_[data-radix-slider-thumb]]:border-warning-500 [&_[data-radix-slider-thumb]:focus-visible]:ring-warning-500',
       danger:
         '[&_[data-radix-slider-track]]:bg-neutral-200 [&_[data-radix-slider-range]]:bg-error-500 [&_[data-radix-slider-thumb]]:border-error-500 [&_[data-radix-slider-thumb]:focus-visible]:ring-error-500',
     },

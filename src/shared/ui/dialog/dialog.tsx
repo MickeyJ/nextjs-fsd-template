@@ -21,7 +21,7 @@ const DialogOverlay = forwardRef<
   >
     <motion.div
       ref={ref}
-      className={cn('fixed inset-0 z-50 bg-neutral-950/50 backdrop-blur-sm', className)}
+      className={cn('fixed inset-0 z-50 bg-neutral-10/50 backdrop-blur-sm', className)}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
